@@ -18,6 +18,10 @@ module SessionsHelper
         cookies.delete(:remember_token)
     end
 
+    def current_user?(user)
+        user == current_user
+    end
+
     def current_user
         # return nil while session[:user_id] == nil
         if (user_id = session[:user_id])
@@ -44,5 +48,16 @@ module SessionsHelper
         @current_user = nil
     end
     
+    # Redirects to stored location (or to the default)
+    def redirect_back_or(default)
+        url_re = session[:forwarding_url]
+        redirect_to(url_re || default)
+        session.delete(:forwarding_url)
+      end
+    
+      # Stores the URL trying to be accessed.
+    def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+    end
 
 end
