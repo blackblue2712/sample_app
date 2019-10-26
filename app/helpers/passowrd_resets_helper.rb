@@ -1,0 +1,2 @@
+module PassowrdResetsHelper
+end
