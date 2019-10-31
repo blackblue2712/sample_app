@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.0'
+gem 'sprockets-rails', '3.2.1'
+gem 'carrierwave',             '2.0'
+gem 'mini_magick',             '4.7.0'
 gem 'bcrypt',     '3.1.12'
 gem 'faker',          '2.6.0'
 gem 'bootstrap-sass', '3.3.7'
@@ -39,6 +42,7 @@ end
 
 group :production do
   gem 'pg', '1.1.4'
+  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
