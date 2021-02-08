@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.0'
 gem 'sprockets-rails', '3.2.1'
-gem 'carrierwave',             '2.0'
+gem 'carrierwave',             '2.1.1'
 gem 'mini_magick',             '4.7.0'
 gem 'bcrypt',     '3.1.12'
 gem 'faker',          '2.6.0'
